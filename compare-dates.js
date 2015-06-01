@@ -1,16 +1,13 @@
 /*
-*  Test Case
+*  Demonstration
 */
-var day1 = {    d:1,
-                m:1,
-                yr:2012 };
+var day1 = { d:1, m:1, yr:2012 };
+var day2 = { d:1, m:1, yr:2013 };
 
-var day2 = {    d:1,
-                m:1,
-                yr:2013 };
+var day1String = day1.d+"/"+day1.m+"/"+day1.yr;
+var day2String = day2.d+"/"+day2.m+"/"+day2.yr;
 
-console.log("Calculate the number of days between "+day1.d+"/"+day1.m+"/"+day1.yr+" and "+day2.d+"/"+day2.m+"/"+day2.yr);
-
+console.log("Calculate the number of days between "+day1String+" and "+day2String);
 var result = getDifferenceAsDays(day1,day2);
 console.log("Result: " + result);
 
@@ -19,13 +16,14 @@ console.log("Result: " + result);
 *  Algorithm for counting the number
 *      of days between two days
 */
-
 function getDifferenceAsDays(A, B) {
-    if(!isValidDate(A) || !isValidDate(B))
-        return "One (or more) of your dates were invalid!";
     
-    var minYear = Math.min(A.yr,B.yr);
-    return Math.abs(convertToDays(B, minYear) - convertToDays(A, minYear));
+    if(isValidDate(A) && isValidDate(B)) {
+        var minYear = Math.min(A.yr,B.yr);
+        return Math.abs(convertToDays(B, minYear) - convertToDays(A, minYear));
+    }
+    
+    return "One (or more) of your dates were invalid!";
 }
 
 function convertToDays(date, minYear) {
