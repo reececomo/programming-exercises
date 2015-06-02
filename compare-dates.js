@@ -15,7 +15,7 @@ console.log("Result: " + result);
 function getDifferenceAsDays(DateA,DateB) {
     // Convert strings into date object
     _A = DateA.split("/"); A = {d:parseInt(_A[0]), m:parseInt(_A[1]), yr:parseInt(_A[2])};
-    _B = DateB.split("/"); B = {d:parseInt(_B[0]), m:parseInt(_B[1]), yr:parseInt(_B[2])]};
+    _B = DateB.split("/"); B = {d:parseInt(_B[0]), m:parseInt(_B[1]), yr:parseInt(_B[2])};
     
     if(isValidDate(A) && isValidDate(B)) {
         var min = Math.min(A.yr,B.yr);
