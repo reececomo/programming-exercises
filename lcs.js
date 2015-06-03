@@ -22,8 +22,10 @@ function lcs(A,B) {
     return backtrack(table, A, B, A.length-1, B.length-1);
 }
 
-// Recursive backtracking algorithm
-//  Returns a string
+/*
+ *  Backtrack recursive algorithm
+ *    Returns a string from position in table
+ */
 function backtrack(table, A, B, i, j) {
     if(i == -1 || j == -1)
         return ""; // For the table return zeroes
