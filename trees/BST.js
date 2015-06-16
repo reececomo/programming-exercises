@@ -10,9 +10,13 @@ function BinarySearchTree(val) {
  */
 function BST(v,l,r) {
   this.value = v;
-  this.left = l; // Left subtree
-  this.right = r; // Right subtree
+  this.left = isset(l) ? null : l; // Left subtree
+  this.right = isset(r) ? null : r; // Right subtree
 };
+
+function isset(var) {
+  return typeof var != 'undefined';
+}
 
 BST.prototype.isEmpty = function() {
   return this.root == null;
